@@ -11,3 +11,25 @@ treb7uchet
 
 In this example, the calibration values of these four lines are 12, 38, 15, and 77. Adding these together produces 142.
 """
+
+
+def main():
+    arr = []
+
+    with open("2023Day1Input.txt") as file:
+        lines = [line.rstrip() for line in file]
+    for stringEntry in lines:
+        for i in stringEntry:
+            if i.isdigit():
+                num1 = i
+                break
+        for j in stringEntry[::-1]:
+            if j.isdigit():
+                num2 = j
+                break
+        arr.append(int(num1 + num2))
+    print(sum(arr))
+
+
+if __name__ == "__main__":
+    main()
